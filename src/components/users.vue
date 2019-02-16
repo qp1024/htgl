@@ -161,7 +161,7 @@ export default {
          this.$message.success(msg);
          this.pagenum=1;
          this.getTableData();
-         this.formdata='';
+         this.formdata={};
        }
     },
     }
