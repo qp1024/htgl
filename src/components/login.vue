@@ -42,7 +42,7 @@ export default {
     // es7写法
     async handleLogin(){
         const res=await this.$http.post('login',this.formdata);
-        console.log(res);
+        // console.log(res);
         const {data:{data:{token},meta:{msg,status}}}=res;
         if(status===200){
             this.$router.push({
