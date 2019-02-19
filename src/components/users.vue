@@ -216,19 +216,29 @@ export default {
       })
     },
     // 点击操作中的编辑小图标时弹出对话框，第一次请求发出，把值付给v-model用数据改变值，对话框渲染出来之后修改内容之后，点击下一个确定按钮对话框消失，再发送一次修改请求看是否是带有表单的v-model如果是不需要再渲染，
-    usersEdit(user){
+   
+   
+   
+   //点击取消按钮不会更改数据
+   async usersEdit(user){
       this.dialogFormVisibleEdit=true;
-      this.formdata=user;
+      const res = await this.$http.get(`users/${user.id}`);
+      // console.log(res.data.data)
+      this.formdata=res.data.data;
     },
-    // 点击对话框中的确定按钮，实现修改功能,点击编辑按钮时usersEdit获取了formdata数据，所以formdata中有数据，点击确定按钮时实现修改功能
+
+
+    
+    // 点击对话框中的确定按钮，实现修改功能,点击编辑按钮usersEdit获取了formdata数据，所以formdata中有数据，点击确定按钮时实现修改功能
     async editUser(){
       const res=await this.$http.put(`users/${this.formdata.id}`,this.formdata);
-      const {
+      const {data,
         meta: { msg, status }
       } = res.data;
       if (status === 200) {
         // 关闭
         this.dialogFormVisibleEdit = false;
+       
       }
     },
     //处理用户状态，点击时改变值，v-model改变的

@@ -68,7 +68,6 @@ export default {
     async menudata(){
       const res=await this.$http.get(`menus`);
       const {data,meta:{status}}=res.data;
-      console.log(res);
       if(status==200){
         this.menu=data;
       }
