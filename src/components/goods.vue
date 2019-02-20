@@ -25,7 +25,7 @@
         <el-table-column label="操作" width="200">
         <template slot-scope="scope">
           <el-button @click="goodsEdit(scope.row)" type="primary" icon="el-icon-edit" circle size="mini" plain></el-button>
-          <el-button type="danger" icon="el-icon-delete" circle size="mini" plain></el-button>
+          <!-- <el-button @click="deleteGoods(scope.row)" type="danger" icon="el-icon-delete" circle size="mini" plain></el-button> -->
         </template>
       </el-table-column>
     </el-table>
@@ -57,6 +57,11 @@ export default {
     this.loadData();
   },
   methods: {
+    //删除商品
+    // async deleteGoods(user){
+    //   const res=await this.$http.delete(`goods/${user.goods_id}`);
+    //   this.loadData();
+    // },
     showDialog(){
       this.$router.push({
         name:'goodsadd'
@@ -83,6 +88,7 @@ export default {
       );
       this.total = resData.data.total;
       this.list = resData.data.goods;
+      // console.log(this.list);
     }
   }
 };
