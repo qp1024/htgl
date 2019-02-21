@@ -9,6 +9,16 @@ import Roles from '@/components/roles.vue'
 import Goods from '@/components/goods.vue'
 import Goodsadd from '@/components/goodsadd.vue'
 
+//分类参数
+import Cateparams from '@/components/cateparams.vue'
+
+// 订单管理
+import Orders from '@/components/orders.vue'
+//数据统计
+import Reports from '@/components/reports.vue'
+
+//商品分类
+import Goodscate from '@/components/goodscate.vue'
 import Message from 'element-ui'
 
 Vue.use(Router)
@@ -43,7 +53,24 @@ const router= new Router({
         name:'goodsadd',
         path:'/goodsadd',
         component:Goodsadd
-      }]
+      },{
+        name:'cateparams',
+        path:'/params',
+        component:Cateparams
+      },{
+        name:'orders',
+        path:'/orders',
+        component:Orders
+      },{
+        name:'reports',
+        path:'/reports',
+        component:Reports
+      },{
+        name:'goodscate',
+        path:'/categories',
+        component:Goodscate
+      }
+    ]
     },{
       name:'login',
       path:'/login',
