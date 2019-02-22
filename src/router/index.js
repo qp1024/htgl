@@ -80,6 +80,7 @@ const router= new Router({
 })
 // 路由守卫当路由发送变化时执行这个函数
 //先判断是不是login如果是login就接着执行,如果不是就判断是否有token如果有token就继续执行,没有token就就返回到登录页面
+//路由守卫
 router.beforeEach((to,from,next)=>{
   if(to.name=='login'){
     next();
@@ -95,4 +96,6 @@ router.beforeEach((to,from,next)=>{
    next();
   }
 });
+//响应拦截器
+
 export default router;

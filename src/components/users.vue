@@ -22,7 +22,7 @@
           mg_state: true
           role_name: "主管"
     -->
-    <el-table :data="list" style="width: 100%">
+    <el-table :data="list" style="width: 100%" v-loading="loading">
       <el-table-column prop="id" label="#" width="80"></el-table-column>
       <el-table-column prop="username" label="姓名" width="120"></el-table-column>
       <el-table-column prop="email" label="邮箱" width="140"></el-table-column>
@@ -169,7 +169,8 @@ export default {
         password:'',
         email:'',
         mobile:''
-      }
+      },
+      loading:true,
     };
   },
   created() {
@@ -288,6 +289,7 @@ export default {
       if (status === 200) {
         this.list = data.users;
         this.total = data.total;
+        this.loading=false;
       }
      },
      // 点击添加按钮实现添加功能
