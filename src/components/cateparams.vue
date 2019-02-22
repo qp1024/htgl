@@ -24,7 +24,8 @@
         <el-tabs @tab-click="changeTab()" v-model="active" type="border-card">
             <el-tab-pane name="1" label="动态参数">
                 <el-button disabled>设置动态参数</el-button>
-                <el-table height="450px" border stripe :data="arrDy" style="width:100%">
+                <!-- 表格 -->
+                <el-table height="450px" border stripe :data="arrDy" style="width:100%" @expand-change="fn">
                     <el-table-column type="expand" width="120">
                         <template slot-scope="scope">
                             <!-- 动态tag编辑 -->
@@ -110,6 +111,12 @@ export default {
         this.getDyOrState();
     },
     methods:{
+        //当点击第二个表格旁边的extand点击当前的上一个移出
+        fn(row,expandedRows){
+            if(expandedRows.length>1){
+                expandedRows.shift();
+            }
+        },
         //动态tag相关方法
            async handleClose(obj,item) {
                 obj.attr_vals.splice(obj.attr_vals.indexOf(item), 1);

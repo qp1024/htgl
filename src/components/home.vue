@@ -15,11 +15,12 @@
         </el-row>
       </el-header>
       <el-container>
+         <!-- :default-active刷新之后左边的导航会没有默认激活默认激活变为$route.name根据当前的路由设置默认激活状态 -->
         <el-aside class="aside" width="200px">
         <el-menu
           :unique-opened="true"
           :router="true"
-          default-active="2"
+          :default-active="$route.name"
           class="el-menu-vertical-demo"
         >
           <!-- 1 -->

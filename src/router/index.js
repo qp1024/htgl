@@ -1,25 +1,40 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/login.vue'
-import Home from '@/components/home.vue'
-import Users from '@/components/users.vue'
-import Rights from '@/components/rights.vue'
-import Roles from '@/components/roles.vue'
-
-import Goods from '@/components/goods.vue'
-import Goodsadd from '@/components/goodsadd.vue'
-
-//分类参数
-import Cateparams from '@/components/cateparams.vue'
-
-// 订单管理
-import Orders from '@/components/orders.vue'
-//数据统计
-import Reports from '@/components/reports.vue'
-
-//商品分类
-import Goodscate from '@/components/goodscate.vue'
+// import Login from '@/components/login.vue'
+// import Home from '@/components/home.vue'
+// import Users from '@/components/users.vue'
+// import Rights from '@/components/rights.vue'
+// import Roles from '@/components/roles.vue'
+// import Goods from '@/components/goods.vue'
+// import Goodsadd from '@/components/goodsadd.vue'
+// import Cateparams from '@/components/cateparams.vue'
+// import Orders from '@/components/orders.vue'
+// import Reports from '@/components/reports.vue'
+// import Goodscate from '@/components/goodscate.vue'
 import Message from 'element-ui'
+
+const Login = () => import('@/components/login.vue')
+
+const Home = () => import('@/components/home.vue')
+
+const Users = () => import('@/components/users.vue')
+
+const Rights = () => import('@/components/rights.vue')
+
+const Roles = () => import('@/components/roles.vue')
+
+const Goods = () => import('@/components/goods.vue')
+
+const Goodsadd = () => import('@/components/goodsadd.vue')
+
+const Cateparams = () => import('@/components/cateparams.vue')
+
+const Goodscate = () => import('@/components/goodscate.vue')
+
+const Orders = () => import('@/components/orders.vue')
+
+const Reports = () => import('@/components/reports.vue')
+
 
 Vue.use(Router)
 
